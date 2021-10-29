@@ -1,0 +1,23 @@
+{
+  "name": "ecmascript_demo",
+  "version": "1.0.0",
+  "description": "grdhetje4tj",
+  "main": "workerjs.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "npm": "^6.14.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "install express"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "keywords": [
+    "a"
+  ],
+  "author": "a",
+  "license": "ISC"
+}

@@ -1,0 +1,16 @@
+body
+{
+    background-color: rgb(252, 7, 7);
+    border-style: solid;
+}
+
+.page-header
+{
+    text-align: center;
+}
+
+.navbar-navbar-default
+{
+    box-sizing: border-box;
+    font-size:larger;
+}

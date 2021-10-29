@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>CRUD Operation using ExpressJS and Mysql</title>
+</head>
+<body>
+    
+    <main>
+        <form action="index.html" method="POST">
+            <h1 style="text-align: center;"> CRUD Operation Using ExpressJS and Mysql </h1>
+            <div class="container">
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <label for="id-input" class="form-label">Student ID:</label>    
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" id="id-input" name="id-input" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <label for="name-input">Student Name:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" id="name-input" name="name-input" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <label for="course-id-input">Course ID:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" id="course-id-input" name="course-id-input" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <label for="course-name-input">Course Name:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" id="course-name-input" name="course-name-input" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <label class="add-dept">Department Name :</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input class="add-dept-input" type="radio" name="add-dept" id="ce" value="1">
+                        <label for="ce">CE</label>
+
+                        <input class="add-dept-input" type="radio" name="add-dept" id="it" value="2">
+                        <label for="it">IT</label>
+
+                        <input class="add-dept-input" type="radio" name="add-dept" id="ee" value="3">
+                        <label for="ee">EE</label>
+
+                        <input class="add-dept-input" type="radio" name="add-dept" id="me" value="4">
+                        <label for="me">ME</label>
+
+                        <input class="add-dept-input" type="radio" name="add-dept" id="civil" value="5">
+                        <label for="civil">Civil</label>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <label>Institute Name : </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input class="add-institute-input" type="checkbox" name="cspit" id="institute-name-input1" value="1">
+                        <label for="institute-name-input1">CSPIT</label>
+                        <input class="add-institute-input" type="checkbox" name="depstar" id="institute-name-input2" value="2">
+                        <label for="institute-name-input2">DEPSTAR</label>
+                        <input class="add-institute-input" type="checkbox" name="pdpias" id="institute-name-input3" value="3">
+                        <label for="institute-name-input3">PDPIAS</label>
+                        <input class="add-institute-input" type="checkbox" name="rpcp" id="institute-name-input4" value="4">
+                        <label for="institute-name-input4">RPCP</label>
+                        <input class="add-institute-input" type="checkbox" name="cmpica" id="institute-name-input5" value="5">
+                        <label for="institute-name-input5">CMPICA</label>
+                        <input class="add-institute-input" type="checkbox" name="i2im" id="institute-name-input6" value="6">
+                        <label for="institute-name-input6">I2IM</label>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <label>University Name : </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <select class="form-select" aria-labelledby="add-univname-input">
+                            <option value="">Select</option>
+                            <option for="charusat" id="charusat" class="dropdown-item" value="1">CHARUSAT</option>
+                            <option for="ahdu" id="ahdu" class="dropdown-item" value="2">AHDU</option>
+                            <option for="ddu" id="ddu" class="dropdown-item" value="3">DDU</option>
+                            <option for="bvm" id="bvm" class="dropdown-item" value="4">BVM</option>
+                            <option for="gcet" id="gcet" class="dropdown-item" value="5">GCET</option>
+                            <option for="nirmauni" id="nirmauni" class="dropdown-item" value="6">NIRMA UNIVERSITY</option>
+                        </select>
+                    </div>
+                </div>
+
+                </div>
+                <br>
+                <br>
+                <div class="addBtn">
+                    <button class="btn btn-success" id="add-details-btn">Add Details</button>
+                </div>
+            </div>
+        </form>
+        <hr style="height: 5px;"/>
+        <div class="row mb-3">
+            <div class="col-sm-3">
+                <input placeholder="Search by name" id="search-input" class="form-control">
+            </div>
+            <div class="col-sm-3">
+            <button id="search-btn" class="btn btn-secondary">Search by Student Name</button>
+            </div>
+        </div>
+
+        <table id="table" class="table table-striped">
+            <thead>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Course ID</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Department Name</th>
+                <th scope="col">Institute Name</th>
+                <th scope="col">University Name</th>
+                <th scope="col">Date Added</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Edit</th>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+
+        <section hidden id="update-row">
+            <label>Enter Name:</label>
+            <input type="text" id="update-name-input">
+            <button id="update-row-btn">Update</button>
+            <label>Enter ID:</label>
+            <input type="text" id="update-id-input">
+            <button id="update-row-btn">Update</button>
+            <label>Enter Course Nane:</label>
+            <input type="text" id="update-course-name-input">
+            <button id="update-row-btn">Update</button>
+            <label>Enter Course ID :</label>
+            <input type="text" id="update-course-id-input">
+            <button id="update-row-btn">Update</button>
+        </section>
+    
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

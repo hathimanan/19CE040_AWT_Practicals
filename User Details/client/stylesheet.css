@@ -1,0 +1,10 @@
+main {
+    width: 60%;
+    margin: 50px auto;
+}
+.container {
+    margin-top: 30px;
+}
+.addBtn {
+    text-align: center;
+}
